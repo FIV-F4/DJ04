@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Добавить новый фильм</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">Название фильма</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Описание</label>
+        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="review" class="form-label">Отзыв</label>
+        <textarea class="form-control" id="review" name="review" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить фильм</button>
+</form>
+{% endblock %}
